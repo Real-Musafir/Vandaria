@@ -1,9 +1,17 @@
 import React, { Component } from 'react'
-import { View, Text, ScrollView, Animated, Dimensions } from 'react-native'
+import {
+  View,
+  Text,
+  ScrollView,
+  Animated,
+  Dimensions,
+  Pressable,
+} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import { SliderBox } from 'react-native-image-slider-box'
 import { Slider, Image, Button } from 'react-native-elements'
 import UserSlider from '../component/UserSlider'
+import HeaderSlide from '../component/HeaderSlide'
 import NationalLeader from '../component/NationalLeader'
 import Swiper from 'react-native-web-swiper'
 import Notice from '../component/Notice'
@@ -11,6 +19,9 @@ import Notice from '../component/Notice'
 class Home extends Component {
   gotoTradeLicenseApply = () => {
     this.props.navigation.navigate('TradeLicenseApply')
+  }
+  gotoAboutUpazila = () => {
+    this.props.navigation.navigate('AboutUpazila')
   }
   constructor(props) {
     super(props)
@@ -33,6 +44,10 @@ class Home extends Component {
       textAlign: 'center',
       backgroundColor: '#F0F8FF',
       padding: 10,
+      marginTop: 30,
+    }
+    const rawSlide4 = {
+      textAlign: 'center',
       marginTop: 30,
     }
     const rawSlide3 = {
@@ -241,7 +256,7 @@ class Home extends Component {
 
     return (
       <ScrollView style={scrlStyle}>
-        <View style={headerPart}>
+        {/* <View style={headerPart}>
           <Image
             style={{ height: 250, marginTop: 10 }}
             source={require('../assets/images/banner-1.png')}
@@ -249,6 +264,43 @@ class Home extends Component {
             <Text style={headTitle}>ভান্ডারিয়া উপজেলা পরিষদ</Text>
             <Text style={headTitle2}>স্মার্ট উপজেলা</Text>
           </Image>
+        </View> */}
+        <View style={rawSlide4}>
+          <View style={{ flex: 1, width: width, height: 290 }}>
+            <Swiper
+              from={1}
+              minDistanceForAction={0.1}
+              controlsProps={{
+                dotsTouchable: true,
+                prevPos: 'left',
+                nextPos: 'right',
+                nextTitle: '>',
+                nextTitleStyle: {
+                  color: 'red',
+                  fontSize: 24,
+                  fontWeight: '500',
+                },
+                PrevComponent: ({ onPress }) => (
+                  <Text
+                    style={{ color: 'white', fontSize: 24, fontWeight: '500' }}
+                  >
+                    {'<'}
+                  </Text>
+                ),
+              }}
+            >
+              <HeaderSlide
+                headTitle="ভান্ডারিয়া উপজেলা পরিষদ"
+                title="স্মার্ট উপজেলা"
+                image="../assets/images/banner-1.png"
+              />
+              <HeaderSlide
+                headTitle="ভান্ডারিয়া উপজেলা পরিষদ"
+                title="স্মার্ট উপজেলা"
+                image="../assets/images/banner-1.png"
+              />
+            </Swiper>
+          </View>
         </View>
         <View style={rawSlide2}>
           <Text style={headTitle3}>জাতীয় নেতৃবৃন্দ</Text>
@@ -446,16 +498,18 @@ class Home extends Component {
         </View>
         <Text style={union}>আরও দেখুন</Text>
         <View style={middleBody}>
-          <View style={left1}>
-            <View style={icnCircle2}>
-              <View style={icnCircle}>
-                <Icon style={iconStyle2} name="building" size={40} />
+          <Pressable onPress={this.gotoAboutUpazila}>
+            <View style={left1}>
+              <View style={icnCircle2}>
+                <View style={icnCircle}>
+                  <Icon style={iconStyle2} name="building" size={40} />
+                </View>
               </View>
-            </View>
 
-            <Text style={num2}>উপজেলা</Text>
-            <Text style={numText}>উপজেলা সম্পর্কিত তথ্য, পরিষদ, প্রশাসন</Text>
-          </View>
+              <Text style={num2}>উপজেলা</Text>
+              <Text style={numText}>উপজেলা সম্পর্কিত তথ্য, পরিষদ, প্রশাসন</Text>
+            </View>
+          </Pressable>
           <View style={right1}>
             <View style={icnCircle2}>
               <View style={icnCircle}>

@@ -6,6 +6,8 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import Home from './container/Home'
 import TradeLicenseApply from './container/TradeLicenseApply'
+import AboutUpazila from './container/AboutUpazila'
+import UpazilaNews from './container/UpazilaNews'
 
 const Stack = createStackNavigator()
 export default function App() {
@@ -21,6 +23,18 @@ export default function App() {
           <Stack.Screen
             name="TradeLicenseApply"
             component={TradeLicenseApply}
+            options={{ headerTransparent: true, headerMode: 'none' }}
+          />
+
+          <Stack.Screen
+            name="AboutUpazila"
+            component={AboutUpazila}
+            options={{ headerTransparent: true, headerMode: 'none' }}
+          />
+
+          <Stack.Screen
+            name="UpazilaNews"
+            component={UpazilaNews}
             options={{ headerTransparent: true, headerMode: 'none' }}
           />
         </Stack.Navigator>
