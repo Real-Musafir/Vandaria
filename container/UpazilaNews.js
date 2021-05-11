@@ -12,6 +12,7 @@ import { SliderBox } from 'react-native-image-slider-box'
 import { Slider, Image, Button } from 'react-native-elements'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import CloseHeader from '../component/CloseHeader'
+import SingleNews from '../component/SingleNews'
 
 class UpazilaNews extends Component {
   render() {
@@ -39,51 +40,19 @@ class UpazilaNews extends Component {
           navigation={this.props.navigation}
           text="উপজেলা সম্পর্কিত"
         />
+
         <ScrollView>
-          <View style={rawView}>
-            <View style={circle1}></View>
-            <Text style={titleText}>এক নজরে </Text>
-          </View>
-          <View style={rawView}>
-            <View style={circle1}></View>
-            <Text style={titleText}>উপজেলা পটভূমি </Text>
-          </View>
-          <View style={rawView}>
-            <View style={circle1}></View>
-            <Text style={titleText}> উপজেলা ঐতিহ্য </Text>
-          </View>
-          <View style={rawView}>
-            <View style={circle1}></View>
-            <Text style={titleText}>ভাষা ও সংস্কৃতি </Text>
-          </View>
-          <View style={rawView}>
-            <View style={circle1}></View>
-            <Text style={titleText}>দর্শনীয় স্থান </Text>
-          </View>
-          <View style={rawView}>
-            <View style={circle1}></View>
-            <Text style={titleText}>খেলা ধুলা ও বিনোদন </Text>
-          </View>
-          <View style={rawView}>
-            <View style={circle1}></View>
-            <Text style={titleText}>মুক্তিজোদ্ধাদের তালিকা </Text>
-          </View>
-          <View style={rawView}>
-            <View style={circle1}></View>
-            <Text style={titleText}>প্রাকৃতিক সম্পদ </Text>
-          </View>
-          <View style={rawView}>
-            <View style={circle1}></View>
-            <Text style={titleText}>নদ নদী </Text>
-          </View>
-          <View style={rawView}>
-            <View style={circle1}></View>
-            <Text style={titleText}>ব্যবসা বাণিজ্য </Text>
-          </View>
-          <View style={rawView}>
-            <View style={circle1}></View>
-            <Text style={titleText}>হাট বাজার </Text>
-          </View>
+          <SingleNews title="এক নজরে" />
+          <SingleNews title="উপজেলা পটভূমি" />
+          <SingleNews title="উপজেলা ঐতিহ্য" />
+          <SingleNews title="ভাষা ও সংস্কৃতি" />
+          <SingleNews title="দর্শনীয় স্থান" />
+          <SingleNews title="খেলা ধুলা ও বিনোদন" />
+          <SingleNews title="মুক্তিজোদ্ধাদের তালিকা" />
+          <SingleNews title="প্রাকৃতিক সম্পদ  " />
+          <SingleNews title="নদ নদী" />
+          <SingleNews title="ব্যবসা বাণিজ্য" />
+          <SingleNews title="হাট বাজার" />
         </ScrollView>
       </SafeAreaProvider>
     )
